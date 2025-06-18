@@ -1,75 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team 12A1 football Club</title>
-    <link rel="shortcut icon" href="img12A/logo.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Team 12A1 Football Club - Matches</title>
+  <link rel="shortcut icon" href="img12A/logo.jpg" type="image/x-icon" />
+  <style>
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: #fafafa;
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a, button {
+      cursor: pointer;
+      outline: none;
+      border: none;
+      font-family: inherit;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #004a99;
+      color: #fff;
+      padding: 10px 20px;
+      flex-wrap: wrap;
+      gap: 10px;
+      box-shadow: 0 3px 8px rgb(0 0 0 / 0.15);
+    }
+    .navbar img {
+      height: 50px;
+      width: 50px;
+      object-fit: contain;
+      border-radius: 5px;
+    }
+    .navbar h3 {
+      flex-grow: 1;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.3rem;
+      user-select: none;
+    }
+    .navbar button {
+      background-color: transparent;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .navbar button:hover,
+    .navbar button.active {
+      background-color: #0265d3;
+    }
+
+    /* Main content */
+    main.match-section {
+      max-width: 1000px;
+      margin: 30px auto 60px;
+      padding: 0 20px;
+      flex-grow: 1;
+    }
+
+    .lineup-container img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgb(0 0 0 / 0.1);
+      margin-bottom: 40px;
+      object-fit: cover;
+      max-height: 400px;
+      transition: transform 0.3s ease;
+    }
+    .lineup-container img:hover {
+      transform: scale(1.02);
+    }
+
+    .upcoming-matches h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #004a99;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+
+    .match-card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgb(0 0 0 / 0.1);
+      padding: 20px 30px;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      flex-wrap: wrap;
+      transition: box-shadow 0.3s ease;
+    }
+    .match-card:hover {
+      box-shadow: 0 10px 30px rgb(0 0 0 / 0.15);
+    }
+
+    .teams {
+      display: flex;
+      gap: 20px;
+      flex: 1 1 300px;
+      justify-content: center;
+      align-items: center;
+    }
+    .teams img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #004a99;
+      box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
+      transition: transform 0.3s ease;
+    }
+    .teams img:hover {
+      transform: scale(1.1);
+    }
+
+    .match-info {
+      flex: 2 1 300px;
+      text-align: center;
+    }
+    .match-info h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 12px;
+    }
+
+    .score-btn {
+      background-color: #004a99;
+      color: white;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      flex-shrink: 0;
+      cursor: default;
+      user-select: none;
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.15);
+    }
+    .score-btn:hover {
+      background-color: #023b73;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #004a99;
+      color: white;
+      padding: 25px 20px;
+      text-align: center;
+      box-shadow: 0 -3px 10px rgb(0 0 0 / 0.15);
+      user-select: none;
+    }
+    footer .footerp h3 {
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+    footer .footerp h5 {
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+    footer p {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 768px) {
+      .navbar h3 {
+        flex-basis: 100%;
+        text-align: center;
+        margin: 10px 0;
+      }
+      .navbar button {
+        flex-grow: 1;
+        font-size: 0.9rem;
+      }
+
+      .match-card {
+        flex-direction: column;
+        align-items: center;
+      }
+      .teams {
+        gap: 15px;
+      }
+      .teams img {
+        width: 80px;
+        height: 80px;
+      }
+      .match-info h2 {
+        font-size: 1.3rem;
+      }
+      .score-btn {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 1.1rem;
+        margin-top: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .teams img {
+        width: 70px;
+        height: 70px;
+      }
+      main.match-section {
+        margin: 20px 10px 50px;
+        padding: 0 10px;
+      }
+      .upcoming-matches h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="navbar">
-        <img src="img12A/logo.jpg" alt="logo">
-        <h3>Team 12A1 Football Club</h3>
+  <div class="navbar">
+    <img src="img12A/logo.jpg" alt="logo" />
+    <h3>Team 12A1 Football Club</h3>
 
-        <button onclick="location='index.html'">Home</button>
-        <button onclick="location='member.html'">Members</button>
-        <button onclick="location='matches.html'">Matches</button>
-        <button onclick="location='about.html'">About Us</button>
+    <button onclick="location='index.html'">Home</button>
+    <button onclick="location='member.html'">Members</button>
+    <button onclick="location='matches.html'" class="active">Matches</button>
+    <button onclick="location='about.html'">About Us</button>
+  </div>
+
+  <main class="match-section">
+    <div class="lineup-container">
+      <img src="img12A/lineup.jpg" alt="lineup" />
     </div>
 
+    <section class="upcoming-matches">
+      <h1>Upcoming Matches</h1>
 
-    <div class="heromatch">
-        <div id="lineupimg">
-            <img src="img12A/lineup.jpg" alt="lineup">
+      <div class="match-card">
+        <div class="teams">
+          <img src="img12A/logo.jpg" alt="Team 01" />
+          <img src="img12A/logo.jpg" alt="Team 02" />
         </div>
-    </div>
-    <div class="heromatch01">
-        <div id="upcom01">
-            <h1>Upcoming Matches-></h1>
+        <div class="match-info">
+          <h2>Team 01 || Team 02</h2>
         </div>
-        <div id="evcom01">
-            <img id="team01" src="img12A/logo.jpg" alt="team01">
-            <img id="team02" src="img12A/logo.jpg" alt="team02">
-            <h1>Team 01 || Team 02</h1>
-            <button id="dtp">0 Vs 0</button>
+        <button class="score-btn" disabled>0 Vs 0</button>
+      </div>
+
+      <div class="match-card">
+        <div class="teams">
+          <img src="img12A/logo.jpg" alt="Team 03" />
+          <img src="img12A/logo.jpg" alt="Team 04" />
         </div>
-          <div id="evcom02">
-            <img id="team03" src="img12A/logo.jpg" alt="team01">
-            <img id="team04" src="img12A/logo.jpg" alt="team02">
-            <h1>Team 01 || Team 02</h1>
-            <button id="dtp">0 Vs 0</button>
+        <div class="match-info">
+          <h2>Team 03 || Team 04</h2>
         </div>
-    </div>
-</body>
-<footer>
+        <button class="score-btn" disabled>0 Vs 0</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
     <div class="footerp">
-        <h3 id="pres">Club President</h3>
-        <h5 id="pres1">Mr. Khem Virak</h5>
+      <h3 id="pres">Club President</h3>
+      <h5 id="pres1">Mr. Khem Virak</h5>
 
-        <h3 id="gm">General Manager</h3>
-        <h5 id="gm1">Mr. LS Osoth</h5>
-        <p>&copy; 2025 By Khim Sovanrith</p>
+      <h3 id="gm">General Manager</h3>
+      <h5 id="gm1">Mr. LS Osoth</h5>
+      <p>&copy; 2025 By Khim Sovanrith</p>
 
-        <h3 id="ass">Assistant General Manager</h3>
-        <h5 id="ass1">Mr. Van RatanakRithea</h5>
+      <h3 id="ass">Assistant General Manager</h3>
+      <h5 id="ass1">Mr. Van RatanakRithea</h5>
     </div>
-</footer>
-<script>
-  const currentPage = window.location.pathname.split("/").pop(); // e.g. "about.html"
+  </footer>
 
-  const buttons = document.querySelectorAll(".navbar button");
+  <script>
+    // Highlight active button dynamically
+    const currentPage = window.location.pathname.split("/").pop();
 
-  buttons.forEach(button => {
-    const onclickAttr = button.getAttribute("onclick");
-    if (!onclickAttr) return;
+    const buttons = document.querySelectorAll(".navbar button");
 
-    const match = onclickAttr.match(/location\s*=\s*'([^']+)'/);
-    const targetPage = match ? match[1] : null;
+    buttons.forEach(button => {
+      const onclickAttr = button.getAttribute("onclick");
+      if (!onclickAttr) return;
 
-    if (targetPage === currentPage || (targetPage === 'index.html' && currentPage === '')) {
-      button.classList.add("active");
-    }
-  });
-</script>
+      const match = onclickAttr.match(/location\s*=\s*'([^']+)'/);
+      const targetPage = match ? match[1] : null;
+
+      if (targetPage === currentPage || (targetPage === 'index.html' && currentPage === '')) {
+        button.classList.add("active");
+      }
+    });
+  </script>
+</body>
 </html>

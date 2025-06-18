@@ -1,74 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team 12A1 football Club</title>
-    <link rel="shortcut icon" href="img12A/logo.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Team 12A1 Football Club - About Us</title>
+  <link rel="shortcut icon" href="img12A/logo.jpg" type="image/x-icon" />
+  <style>
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: #fafafa;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #004a99;
+      color: white;
+      padding: 12px 20px;
+      flex-wrap: wrap;
+      gap: 10px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    }
+    .navbar img {
+      height: 50px;
+      width: 50px;
+      object-fit: contain;
+      border-radius: 6px;
+    }
+    .navbar h3 {
+      flex-grow: 1;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.3rem;
+      user-select: none;
+    }
+    .navbar button {
+      background-color: transparent;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .navbar button:hover,
+    .navbar button.active {
+      background-color: #0265d3;
+    }
+
+    /* Hero About Us section */
+    .heroaboutus {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      padding: 40px 20px 20px;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .team-member {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      width: 280px;
+      padding: 20px;
+      text-align: center;
+      transition: box-shadow 0.3s ease;
+    }
+    .team-member:hover {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+    .team-member img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 4px solid #004a99;
+    }
+    .team-member h1 {
+      font-size: 1.4rem;
+      color: #004a99;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .team-member h2 {
+      font-size: 1.1rem;
+      color: #333;
+      font-weight: 600;
+    }
+
+    /* About Us heading */
+    .aboutus {
+      max-width: 1100px;
+      margin: 30px auto 50px;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .aboutus h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #004a99;
+      letter-spacing: 1.5px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #004a99;
+      color: white;
+      padding: 25px 20px;
+      text-align: center;
+      box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.15);
+      user-select: none;
+    }
+    footer .footerp h3 {
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+    footer .footerp h5 {
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+    footer p {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .heroaboutus {
+        gap: 30px;
+      }
+      .team-member {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .heroaboutus {
+        flex-direction: column;
+        gap: 30px;
+        padding-bottom: 40px;
+      }
+      .team-member {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .team-member img {
+        width: 130px;
+        height: 130px;
+      }
+      .aboutus h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="navbar">
-        <img src="img12A/logo.jpg" alt="logo">
-        <h3>Team 12A1 Football Club</h3>
+  <div class="navbar">
+    <img src="img12A/logo.jpg" alt="logo" />
+    <h3>Team 12A1 Football Club</h3>
 
-        <button onclick="location='index.html'">Home</button>
-        <button onclick="location='member.html'">Members</button>
-        <button onclick="location='matches.html'">Matches</button>
-        <button onclick="location='about.html'">About Us</button>
+    <button onclick="location='index.html'">Home</button>
+    <button onclick="location='member.html'">Members</button>
+    <button onclick="location='matches.html'">Matches</button>
+    <button onclick="location='about.html'" class="active">About Us</button>
+  </div>
+
+  <div class="heroaboutus">
+    <div class="team-member">
+      <img id="picpres" src="img12A/picpres.jpg" alt="Club President" />
+      <h1>Club President</h1>
+      <h2>Mr. Khem Virak</h2>
     </div>
-
-
-    <div class="heroaboutus">
-        <img id="picpres" src="img12A/picpres.jpg" alt="">
-        <div id="nametag">
-            <h1>Club President</h1>
-            <h2>Mr. Khem Virak</h2>
-        </div>
-        <img id="picgm" src="img12A/picgm.jpg" alt="">
-        <div id="nametag01">
-            <h1>General Manager</h1>
-            <h2>Mr. LS Osoth</h2>
-        </div>
-        <img id="picass" src="img12A/picass.jpg" alt="">
-          <div id="nametag02">
-            <h1>Assistant General<br>Manager</h1>
-            <h2>Mr. Van RatanakRithea</h2>
-        </div>
+    <div class="team-member">
+      <img id="picgm" src="img12A/picgm.jpg" alt="General Manager" />
+      <h1>General Manager</h1>
+      <h2>Mr. LS Osoth</h2>
     </div>
-
-    <div class="aboutus">
-        <h1>About Us</h1>
+    <div class="team-member">
+      <img id="picass" src="img12A/picass.jpg" alt="Assistant General Manager" />
+      <h1>Assistant General<br />Manager</h1>
+      <h2>Mr. Van RatanakRithea</h2>
     </div>
-</body>
-<footer>
+  </div>
+
+  <div class="aboutus">
+    <h1>About Us</h1>
+  </div>
+
+  <footer>
     <div class="footerp">
-        <h3 id="pres">Club President</h3>
-        <h5 id="pres1">Mr. Khem Virak</h5>
+      <h3 id="pres">Club President</h3>
+      <h5 id="pres1">Mr. Khem Virak</h5>
 
-        <h3 id="gm">General Manager</h3>
-        <h5 id="gm1">Mr. LS Osoth</h5>
-        <p>&copy; 2025 By Khim Sovanrith</p>
+      <h3 id="gm">General Manager</h3>
+      <h5 id="gm1">Mr. LS Osoth</h5>
+      <p>&copy; 2025 By Khim Sovanrith</p>
 
-        <h3 id="ass">Assistant General Manager</h3>
-        <h5 id="ass1">Mr. Van RatanakRithea</h5>
+      <h3 id="ass">Assistant General Manager</h3>
+      <h5 id="ass1">Mr. Van RatanakRithea</h5>
     </div>
-</footer>
-<script>
-  const currentPage = window.location.pathname.split("/").pop(); // e.g. "about.html"
+  </footer>
 
-  const buttons = document.querySelectorAll(".navbar button");
+  <script>
+    // Highlight active button dynamically
+    const currentPage = window.location.pathname.split("/").pop();
 
-  buttons.forEach(button => {
-    const onclickAttr = button.getAttribute("onclick");
-    if (!onclickAttr) return;
+    const buttons = document.querySelectorAll(".navbar button");
 
-    const match = onclickAttr.match(/location\s*=\s*'([^']+)'/);
-    const targetPage = match ? match[1] : null;
+    buttons.forEach(button => {
+      const onclickAttr = button.getAttribute("onclick");
+      if (!onclickAttr) return;
 
-    if (targetPage === currentPage || (targetPage === 'index.html' && currentPage === '')) {
-      button.classList.add("active");
-    }
-  });
-</script>
+      const match = onclickAttr.match(/location\s*=\s*'([^']+)'/);
+      const targetPage = match ? match[1] : null;
+
+      if (targetPage === currentPage || (targetPage === 'index.html' && currentPage === '')) {
+        button.classList.add("active");
+      }
+    });
+  </script>
+</body>
 </html>
