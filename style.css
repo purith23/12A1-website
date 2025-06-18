@@ -1,0 +1,716 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background-color: rgb(204, 204, 204);
+    height: 60em;
+}
+
+/* Navbar */
+.navbar{
+    position: relative;
+    top: 20px;
+    left: 35px;
+    background-color: white;
+    box-shadow: 0 0 20px black;
+    border-radius: 40px;
+    width: 95%;
+    height: 90px;
+}
+#dark{
+    background-color: black;
+    color: white;
+}
+#dark:hover {
+    background-color: white;
+    color: black;
+}
+.navbar img{
+    position: absolute;
+    width: 80px;
+    border-radius: 30px;
+    height: 80px;
+    top: 5px;
+    left: 10px;
+}
+.navbar h3{
+    position: absolute;
+    top: .7em;
+    left: 4em;
+    font-size: 30px;
+}
+.navbar button{
+    position: relative;
+    top: 18%;
+    left: 45%;
+    margin: 9px;
+    width: 170px;
+    height: 40px;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    color: black;
+    background-color: transparent;
+    box-shadow: 0 0 10px black;
+    font-size: 17px;
+}
+.navbar button:hover{
+    background-color: black;
+    color: white;
+    text-decoration: underline;
+}
+.navbar button.active {
+  background-color: #007bff;
+  color: white;
+  border: 2px solid #0056b3;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.hero{
+    position: absolute;
+    top: 9em;
+    left: 35px;
+    background-color: white;
+    box-shadow: 0 0 20px black;
+    border-radius: 45px;
+    width: 95%;
+    height: 40em;
+}
+
+.heromatch{
+    position: absolute;
+    top: 9em;
+    left: 35px;
+    background-color: white;
+    box-shadow: 0 0 20px black;
+    border-radius: 45px;
+    width: 42%;
+    height: 40em;
+}
+
+.heromatch01{
+    position: absolute;
+    top: 9em;
+    left: 46%;
+    background-color: white;
+    box-shadow: 0 0 20px black;
+    border-radius: 45px;
+    width: 51%;
+    height: 40em;
+}
+
+.heroaboutus{
+    position: absolute;
+    top: 9em;
+    left: 35px;
+    background-color: white;
+    box-shadow: 0 0 20px black;
+    border-radius: 45px;
+    width: 35%;
+    height: 40em;
+}
+#picpres{
+    position: absolute;
+    top: 1px;
+    left: 10px;
+    width: 170px;
+    height: 200px;
+    border-radius: 40px;
+}
+#picgm{
+    position: absolute;
+    top: 33.5%;
+    left: 10px;
+    width: 170px;
+    height: 200px;
+    border-radius: 40px;
+}
+#picass{
+    position: absolute;
+    top: 67%;
+    left: 10px;
+    width: 170px;
+    height: 200px;
+    border-radius: 40px;
+}
+#nametag h1{
+    position: absolute;
+    left: 45%;
+    top: 2em;
+    color: rgb(5, 129, 129);
+}
+#nametag h2{
+    position: absolute;
+    left: 45%;
+    top: 5em;
+}
+#nametag01 h1{
+    position: absolute;
+    left: 45%;
+    top: 8.5em;
+    color: rgb(3, 139, 139);
+}
+#nametag01 h2{
+    position: absolute;
+    left: 45%;
+    top: 13.5em;
+}
+#nametag02 h1{
+    position: absolute;
+    color: rgb(7, 116, 116);
+    left: 45%;
+    top: 14.5em;
+}
+#nametag02 h2{
+    position: absolute;
+    left: 45%;
+    top: 23em;
+}
+
+.aboutus{
+    position: absolute;
+    top: 9em;
+    left: 37em;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 0 20px black;
+    width: 58%;
+    height: 92%;
+}
+
+.aboutus h1{
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+
+#upcom01{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    box-shadow: 0 0 20px black;
+    width: 50%;
+    height: 60px;
+    border-radius: 25px;
+}
+#upcom01 h1{
+    position: absolute;
+    top: 6px;
+    left: 20px;
+}
+
+#evcom01{
+    position: absolute;
+    top: 8em;
+    left: 2.2em;
+    box-shadow: 0 0 20px  black;
+    width: 90%;
+    height: 170px;
+    border-radius: 25px;
+}
+
+#evcom01 h1{
+    position: absolute;
+    top: 3.5em;
+    left: 30%;
+}
+#evcom01 button{
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    width: 40%;
+    height: 120px;
+    top: -0.1em;
+    left: 30%;
+    font-size: 90px;
+}
+
+#evcom02{
+    position: absolute;
+    top: 20em;
+    left: 2.2em;
+    box-shadow: 0 0 20px  black;
+    width: 90%;
+    height: 170px;
+    border-radius: 25px;
+}
+
+#evcom02 h1{
+    position: absolute;
+    top: 3.5em;
+    left: 30%;
+}
+
+#evcom02 button{
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    width: 40%;
+    height: 120px;
+    top: -0.1em;
+    left: 30%;
+    font-size: 90px;
+}
+
+#team01{
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    width: 120px;
+    height: 120px;
+    border-radius: 15px;
+}
+#team03{
+    position: absolute;
+    top: 10px;
+    left: 34em;
+    width: 120px;
+    height: 120px;
+    border-radius: 15px;
+}
+
+#team04{
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    width: 120px;
+    height: 120px;
+    border-radius: 15px;
+}
+#team02{
+    position: absolute;
+    top: 10px;
+    left: 34em;
+    width: 120px;
+    height: 120px;
+    border-radius: 15px;
+}
+#bgteam img{
+    box-shadow: 0 0 10px black;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border-radius: 25px;
+    width: 900px;
+    height: 600px;
+}
+.desc{
+    position: absolute;
+    background-color: transparent;
+    box-shadow: 0 0 10px black;
+    border-radius: 25px;
+    width: 480px;
+    height: 600px;
+    top: 20px;
+    left: 65%;
+}
+.desc h1{
+    position: absolute;
+    font-size: 30px;
+    top: 10px;
+    left: 20px;
+}
+#pic01{
+    position: absolute;
+    border-radius: 15px;
+    top: 60px;
+    left: 23px;
+    width: 90%;
+    height: 250px;
+}
+#pic02{
+    position: absolute;
+    border-radius: 15px;
+    top: 55%;
+    left: 23px;
+    width: 90%;
+    height: 250px;
+}
+#more{
+    position: absolute;
+    top: 85%;
+    left: 2.5%;
+    border: none;
+    width: 200px;
+    height: 60px;
+    border-radius: 20px;
+    font-size: 20px;
+}
+#more:hover{
+    background-color: black;
+    color: white;
+}
+/*Member page */
+#memb{
+    position: absolute;
+    top: 30px;
+    left: 2.5%;
+    background-color: transparent;
+    box-shadow: 0 0 20px black;
+    border-radius: 27px;
+    width: 95%;
+    height: 70px;
+}
+#memb h1{
+    position: absolute;
+    top: 12%;
+    left: 30%;
+}
+#iconmem{
+    position: absolute;
+    top: 6em;
+    width: 20%;
+    height: 30em;
+    border-radius: 25px;
+    background-color: transparent;
+    box-shadow: 0 0 20px black;
+}
+#iconmem h2{
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+#iconmem h3{
+    position: absolute;
+    top: 35px;
+    left: 22px;
+}
+#iconmem img{
+    position: absolute;
+    top: 14%;
+    left: 6%;
+    border-radius: 15px;
+    width: 240px;
+    height: 400px;
+}
+#iconm01{
+    position: absolute;
+    top: 6em;
+    left: 23em;
+    width: 20%;
+    border-radius: 25px;
+    height: 120px;
+    background-color: transparent;
+    box-shadow: 0 0 20px black;
+}
+#iconm01 img{
+    position: absolute;
+    border-radius: 25px;
+    top: 10px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+}
+#iconm01 h2{
+    position: absolute;
+    top: 20px;
+    left: 100px;
+}
+#iconm01 h3{
+    position: absolute;
+    top: 75px;
+    left: 25px;
+    font-size: 20px;
+}
+
+#iconm02{
+    position: absolute;
+    top: 6em;
+    left: 45.5em;
+    width: 20%;
+    border-radius: 25px;
+    height: 120px;
+    background-color: transparent;
+    box-shadow: 0 0 20px black;
+}
+#iconm02 img{
+    position: absolute;
+    border-radius: 25px;
+    top: 10px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+}
+#iconm02 h2{
+    position: absolute;
+    top: 20px;
+    left: 100px;
+}
+#iconm02 h3{
+    position: absolute;
+    top: 75px;
+    left: 16px;
+    font-size: 20px;
+}
+
+#iconm03{
+    position: absolute;
+    top: 6em;
+    left: 68em;
+    width: 20%;
+    border-radius: 25px;
+    height: 120px;
+    background-color: transparent;
+    box-shadow: 0 0 20px black;
+}
+#iconm03 img{
+    position: absolute;
+    border-radius: 25px;
+    top: 10px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+}
+#iconm03 h2{
+    position: absolute;
+    top: 20px;
+    left: 100px;
+}
+#iconm03 h3{
+    position: absolute;
+    top: 75px;
+    left: 25px;
+    font-size: 20px;
+}
+
+#iconm04{
+    position: absolute;
+    top: 15em;
+    left: 23em;
+    width: 20%;
+    border-radius: 25px;
+    height: 120px;
+    background-color: transparent;
+    box-shadow: 0 0 20px black;
+}
+#iconm04 img{
+    position: absolute;
+    border-radius: 25px;
+    top: 10px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+}
+#iconm04 h2{
+    position: absolute;
+    top: 20px;
+    left: 100px;
+}
+#iconm04 h3{
+    position: absolute;
+    top: 75px;
+    left: 25px;
+    font-size: 20px;
+}
+
+#iconm05{
+    position: absolute;
+    top: 15em;
+    left: 45.5em;
+    width: 20%;
+    border-radius: 25px;
+    height: 120px;
+    background-color: transparent;
+    box-shadow: 0 0 20px black;
+}
+#iconm05 img{
+    position: absolute;
+    border-radius: 25px;
+    top: 10px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+}
+#iconm05 h2{
+    position: absolute;
+    top: 20px;
+    left: 100px;
+}
+#iconm05 h3{
+    position: absolute;
+    top: 75px;
+    left: 25px;
+    font-size: 20px;
+}
+
+#iconm06{
+    position: absolute;
+    top: 15em;
+    left: 68em;
+    width: 20%;
+    border-radius: 25px;
+    height: 120px;
+    background-color: transparent;
+    box-shadow: 0 0 20px black;
+}
+#iconm06 img{
+    position: absolute;
+    border-radius: 25px;
+    top: 10px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+}
+#iconm06 h2{
+    position: absolute;
+    top: 20px;
+    left: 100px;
+}
+#iconm06 h3{
+    position: absolute;
+    top: 75px;
+    left: 25px;
+    font-size: 20px;
+}
+
+/*last*/
+#iconm07{
+    position: absolute;
+    top: 24em;
+    left: 23em;
+    width: 20%;
+    border-radius: 25px;
+    height: 120px;
+    background-color: transparent;
+    box-shadow: 0 0 20px black;
+}
+#iconm07 img{
+    position: absolute;
+    border-radius: 25px;
+    top: 10px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+}
+#iconm07 h2{
+    position: absolute;
+    top: 20px;
+    left: 100px;
+}
+#iconm07 h3{
+    position: absolute;
+    top: 75px;
+    left: 25px;
+    font-size: 20px;
+}
+
+#iconm08{
+    position: absolute;
+    top: 24em;
+    left: 45.5em;
+    width: 20%;
+    border-radius: 25px;
+    height: 120px;
+    background-color: transparent;
+    box-shadow: 0 0 20px black;
+}
+#iconm08 img{
+    position: absolute;
+    border-radius: 25px;
+    top: 10px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+}
+#iconm08 h2{
+    position: absolute;
+    top: 20px;
+    left: 100px;
+}
+#iconm08 h3{
+    position: absolute;
+    top: 75px;
+    left: 25px;
+    font-size: 20px;
+}
+
+#iconm09{
+    position: absolute;
+    top: 24em;
+    left: 68em;
+    width: 20%;
+    border-radius: 25px;
+    height: 120px;
+    background-color: transparent;
+    box-shadow: 0 0 20px black;
+}
+#iconm09 img{
+    position: absolute;
+    border-radius: 25px;
+    top: 10px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+}
+#iconm09 h2{
+    position: absolute;
+    top: 20px;
+    left: 100px;
+}
+#iconm09 h3{
+    position: absolute;
+    top: 75px;
+    left: 25px;
+    font-size: 20px;
+}
+
+#lineupimg img{
+    position: absolute;
+    box-shadow: 0 0 20px black;
+    top: 20px;
+    left: 20px;
+    border-radius: 25px;
+    width: 600px;
+    height: 600px;
+
+}
+/* Footer Page */
+.footerp{
+    position: absolute;
+    top: 51em;
+    left: 35px;
+    background-color: white;
+    box-shadow: 0 0 20px black;
+    width: 95%;
+    height: 120px;
+    border-radius: 40px;
+}
+.footerp p{
+    position: absolute;
+    top: 70%;
+    left: 45%;
+}
+#pres{
+    position: absolute;
+    top: 10px;
+    left: 10%;
+}
+#pres1{
+    position: absolute;
+    top: 40px;
+    left: 10%;
+}
+#gm{
+    position: absolute;
+    top: 10px;
+    left: 45%;
+}
+#gm1{
+    position: absolute;
+    top: 40px;
+    left: 45%;
+}
+#ass{
+    position: absolute;
+    top: 10px;
+    left: 75%;
+}
+#ass1{
+    position: absolute;
+    top: 40px;
+    left: 75%;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12A football Club</title>
+    <link rel="shortcut icon" href="img12A/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="dark.css">
+</head>
+<body>
+    <div class="navbar">
+        <img src="img12A/logo.jpg" alt="logo">
+        <h3>Team 12A Football Club</h3>
+
+        <button onclick="location='darkmode.html'">Home</button>
+        <button onclick="location='member.html'">Members</button>
+        <button onclick="location='matches.html'">Matches</button>
+        <button onclick="location='about.html'">About Us</button>
+        <button id="dark" onclick="location='index.html'">Light Mode</button>
+    </div>
+
+
+    <div class="hero">
+        <div id="bgteam">
+            <img src="img12A/bgteam.jpg" alt="team">
+            <button id="more">Explore More-></button>
+        </div>
+        <div class="desc">
+            <h1>Welcome to 12A Football Club</h1>
+            <img id="pic01" src="img12A/desc01.jpg" alt="01">
+            <img id="pic02" src="img12A/desc02.jpg" alt="02">
+        </div>
+    </div>
+</body>
+<footer>
+    <div class="footerp">
+        <h3 id="pres">Club President</h3>
+        <h5 id="pres1">Mr. Khem Virak</h5>
+
+        <h3 id="gm">General Manager</h3>
+        <h5 id="gm1">Mr. LS Osoth</h5>
+        <p>&copy; 2025 By Khim Sovanrith</p>
+
+        <h3 id="ass">Assistant General Manager</h3>
+        <h5 id="ass1">Mr. Van RatanakRithea</h5>
+    </div>
+</footer>
+<script>
+  const currentPage = window.location.pathname.split("/").pop(); // e.g. "about.html"
+
+  const buttons = document.querySelectorAll(".navbar button");
+
+  buttons.forEach(button => {
+    const onclickAttr = button.getAttribute("onclick");
+    if (!onclickAttr) return;
+
+    const match = onclickAttr.match(/location\s*=\s*'([^']+)'/);
+    const targetPage = match ? match[1] : null;
+
+    if (targetPage === currentPage || (targetPage === 'index.html' && currentPage === '')) {
+      button.classList.add("active");
+    }
+  });
+</script>
+</html>
