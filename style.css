@@ -88,6 +88,7 @@
 .desc h2 {
     font-size: 2rem;
     margin-bottom: 20px;
+    color: black;
 }
 
 .gallery {
@@ -181,7 +182,7 @@ h1, h2, h3 {
 }
 
 .member-card {
-  background-color: white;
+  background-color: #34495e;
   padding: 20px;
   width: 220px;
   border-radius: 10px;
